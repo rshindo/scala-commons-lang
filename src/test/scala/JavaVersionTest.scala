@@ -8,6 +8,7 @@ import org.example.JavaVersion.JAVA_1_8
 import org.example.JavaVersion.JAVA_0_9
 import org.example.JavaVersion.JAVA_1_7
 import org.example.JavaVersion.JAVA_1_4
+import org.example.JavaVersion.JAVA_RECENT
 
 class JavaVersionTest extends Assertions {
 
@@ -15,12 +16,6 @@ class JavaVersionTest extends Assertions {
   def getJava1_8() = {
     val java1_8 = JAVA_1_8
     assert(java1_8 == JAVA_1_8)
-  }
-
-  @Test
-  def バージョンの違うものを比較して失敗する = {
-    val java1_8 = JAVA_1_8
-    assert(java1_8 != JAVA_0_9)
   }
 
   @Test
@@ -40,6 +35,12 @@ class JavaVersionTest extends Assertions {
     val java1_4 = JAVA_1_4
     val java1_8 = JAVA_1_8
     assert(java1_8.atLeast(java1_4))
+  }
+
+  @Test
+  def JAVA_RECENTで1_8になる = {
+    val javaRecent = JAVA_RECENT
+    assert(JAVA_RECENT.name == JAVA_1_8.name)
   }
 
 }

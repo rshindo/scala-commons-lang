@@ -45,7 +45,8 @@ object JavaVersion {
 
   private def toFloatVersion(value:String): Float = {
     try {
-    	value.toFloat
+    	val toParse = value.split("\\.")
+    	(toParse.apply(0) + "." + toParse.apply(1).charAt(0).toString()).toFloat
     } catch {
       case e:Exception => -1
     }

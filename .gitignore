@@ -1,3 +1,11 @@
 target/
 project/target
 /bin/
+.idea/
+.idea_modules/
+.settings/
+.cache-main
+.cache-tests
+.classpath
+.history
+.project
